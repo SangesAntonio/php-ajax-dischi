@@ -1,4 +1,48 @@
 <?php
+$albums = [
+    [
+        'title' => 'New Jersey',
+        'author' => 'Bon Jovi',
+        'year' => 1988,
+        'poster' => 'https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg',
+        'genre' => 'Rock'
+    ],
+    [
+        'title' => 'Live at Wembley 86',
+        'author' => 'Queen',
+        'year' => 1992,
+        'poster' => 'https://images-na.ssl-images-amazon.com/images/I/71g40mlbinL._SX355_.jpg',
+        'genre' => 'Pop'
+    ],
+    [
+        'title' => 'Ten\'s Summoner\'s Tales',
+        'author' => 'Sting',
+        'year' => 1993,
+        'poster' => 'https://images-na.ssl-images-amazon.com/images/I/411BQR6BHRL.jpg',
+        'genre' => 'Pop'
+    ],
+    [
+        'title' => 'Steve Gadd band',
+        'author' => 'Steve Gadd Band',
+        'year' => 2018,
+        'poster' => 'https://m.media-amazon.com/images/I/81UtLzBDoEL._SS500_.jpg',
+        'genre' => 'Jazz'
+    ],
+    [
+        'title' => 'Brave new World',
+        'author' => 'Iron Maiden',
+        'year' => 2000,
+        'poster' => 'https://upload.wikimedia.org/wikipedia/en/0/03/Iron_Maiden_-_Brave_New_World.jpg',
+        'genre' => 'Metal'
+    ],
+    [
+        'title' => 'One more car, one more rider',
+        'author' => 'Eric Clapton',
+        'year' => 2002,
+        'poster' => 'https://images-na.ssl-images-amazon.com/images/I/81MDAIdh78L._SY355_.jpg',
+        'genre' => 'Rock'
+    ]
+];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +65,19 @@
 
     <div class="lists">
         <div class="container cs-cards pt-5 d-flex">
-            <div class="text-center w-100" v-if="isLoaded">
-                <h1>CARICAMENTO IN CORSO..</h1>
-            </div>
 
-            <div class="p-2 cs-container">
-                <img :src="image" class="img-card" alt="">
-                <h2>{{album}}</h2>
-                <p class=" mt-3 mb-0">{{artist}}</p>
-                <p>{{year}}</p>
-            </div>
+
+            <?php foreach ($albums as $album) { ?>
+
+                <div class="p-2 cs-container">
+                    <img src='<?= $album['poster'] ?>' class="img-card" alt="">
+                    <h2><?= $album['title'] ?></h2>
+                    <p class=" mt-3 mb-0"><?= $album['author'] ?></p>
+                    <p><? $album['year'] ?></p>
+                </div>
+            <?php
+
+            } ?>
         </div>
     </div>
     </div>
